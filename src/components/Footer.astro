@@ -1,0 +1,37 @@
+---
+const currentYear = new Date().getFullYear();
+const socialLinks = [
+  { icon: 'fab fa-twitter', url: '#' },
+  { icon: 'fab fa-facebook', url: '#' },
+  { icon: 'fab fa-instagram', url: '#' },
+  { icon: 'fab fa-youtube', url: '#' }
+];
+---
+
+<footer class="bg-[#0c1426] text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-6 md:mb-0">
+        <h2 class="text-2xl font-bold text-[#ffb300]">CourtVision Daily</h2>
+        <p class="mt-2 text-gray-300">&copy; {currentYear} CourtVision Daily. All rights reserved.</p>
+      </div>
+      
+      <div class="flex space-x-6">
+        {socialLinks.map((link, index) => (
+          <a 
+            href={link.url} 
+            key={index}
+            class="text-gray-300 hover:text-[#ffb300] transition-colors duration-300"
+            aria-label={`Follow us on ${link.icon.split('-')[2]}`}
+          >
+            <i class={link.icon}></i>
+          </a>
+        ))}
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <p>Bringing you the latest in sports coverage and insights</p>
+    </div>
+  </div>
+</footer>

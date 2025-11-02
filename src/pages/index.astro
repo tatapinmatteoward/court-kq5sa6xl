@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "CourtVision Daily";
+const pageDescription = "Discover daily insights into basketball excellence with CourtVision Daily. From in-depth analysis to player spotlights, stay ahead of the game with our modern take on hoops.";
+
+const featuredInsight = {
+  title: "Mastering the Mid-Range: A Timeless Art in Modern Hoops",
+  excerpt: "In an era dominated by threes and drives, the mid-range jumper remains a weapon of precision. Explore how stars like Kevin Durant and DeMar DeRozan keep this classic alive...",
+  readMore: "Read more →"
+};
+
+const latestUpdates = [
+  { date: "May 15, 2023", title: "Player Spotlight: Zion Williamson's Evolution" },
+  { date: "May 14, 2023", title: "Statistical Breakdown: The Rise of Defensive Stars" },
+  { date: "May 13, 2023", title: "Coaching Innovation: How Modern Systems Shape Play" }
+];
+
+const featuredPlayers = [
+  { name: "Kevin Durant", position: "SF", team: "Phoenix Suns" },
+  { name: "DeMar DeRozan", position: "SG", team: "Toronto Raptors" },
+  { name: "Luka Doncic", position: "PG", team: "Dallas Mavericks" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0c1426] to-[#1a2d4d] z-0"></div>
+    <div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          CourtVision Daily
+        </h1>
+        <p class="text-xl md:text-2xl text-[#ffb300] mb-10 font-light">
+          Daily Insights into Basketball Excellence
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-[#ffb300] hover:bg-[#e6a000] text-[#0c1426] font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+            Explore Insights
+          </button>
+          <button class="border-2 border-[#ffb300] text-[#ffb300] hover:bg-[#ffb300] hover:text-[#0c1426] font-bold py-3 px-8 rounded-full transition duration-300">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Animated basketball -->
+    <div class="absolute top-1/4 right-10 w-16 h-16 md:w-24 md:h-24 opacity-20 animate-bounce">
+      <div class="w-full h-full bg-[#ffb300] rounded-full"></div>
+    </div>
+  </section>
+
+  <!-- Featured Insight Section -->
+  <section class="py-16 bg-gradient-to-b from-[#0c1426] to-[#1a2d4d]">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center mb-10">
+        <div class="w-1 h-10 bg-[#ffb300] mr-4"></div>
+        <h2 class="text-3xl font-bold text-white">Featured Insight</h2>
+      </div>
+      
+      <div class="max-w-4xl mx-auto bg-white rounded-xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-[1.01]">
+        <div class="md:flex">
+          <div class="md:w-2/3 p-8">
+            <h3 class="text-2xl md:text-3xl font-bold text-[#0c1426] mb-4">{featuredInsight.title}</h3>
+            <p class="text-gray-700 mb-6 leading-relaxed">{featuredInsight.excerpt}</p>
+            <button class="flex items-center text-[#ffb300] font-semibold group">
+              {featuredInsight.readMore}
+              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="md:w-1/3 bg-gradient-to-br from-[#ffb300] to-[#ff9800] flex items-center justify-center p-8">
+            <div class="text-center">
+              <div class="inline-block bg-white rounded-full p-4 mb-4">
+                <i class="fas fa-basketball-ball text-[#ffb300] text-4xl"></i>
+              </div>
+              <h4 class="text-white font-bold text-xl">Mid-Range Mastery</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Updates Section -->
+  <section class="py-16 bg-[#0c1426]">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center mb-10">
+        <div class="w-1 h-10 bg-[#ffb300] mr-4"></div>
+        <h2 class="text-3xl font-bold text-white">Latest Updates</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestUpdates.map((update, index) => (
+          <div key={index} class="bg-gradient-to-br from-[#1a2d4d] to-[#0c1426] rounded-xl p-6 border border-[#1f3a6a] hover:border-[#ffb300] transition-all duration-300 transform hover:-translate-y-2">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-sm font-semibold text-[#ffb300] bg-[#1f3a6a] px-3 py-1 rounded-full">
+                {update.date}
+              </span>
+              <i class="fas fa-chevron-right text-[#ffb300]"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{update.title}</h3>
+            <button class="text-[#ffb300] font-semibold flex items-center">
+              Read Story
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Player Spotlight Section -->
+  <section class="py-16 bg-gradient-to-b from-[#1a2d4d] to-[#0c1426]">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center mb-10">
+        <div class="w-1 h-10 bg-[#ffb300] mr-4"></div>
+        <h2 class="text-3xl font-bold text-white">Player Spotlight</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredPlayers.map((player, index) => (
+          <div key={index} class="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#0c1426] to-[#1a2d4d] border border-[#1f3a6a] hover:border-[#ffb300] transition-all duration-500 transform hover:scale-[1.03]">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0c1426]/80 to-transparent z-10"></div>
+            <div class="relative z-20 p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold text-white">{player.name}</h3>
+                  <p class="text-[#ffb300] font-semibold">{player.position} • {player.team}</p>
+                </div>
+                <div class="bg-[#ffb300] text-[#0c1426] rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                  {index + 1}
+                </div>
+              </div>
+              <div class="flex justify-center mb-4">
+                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-32 flex items-center justify-center text-gray-500">
+                  Player Image
+                </div>
+              </div>
+              <button class="w-full py-3 bg-[#ffb300] hover:bg-[#e6a000] text-[#0c1426] font-bold rounded-lg transition duration-300">
+                View Profile
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#ffb300] to-[#ff9800]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0c1426] mb-6">Join the CourtVision Community</h2>
+      <p class="text-xl text-[#0c1426] max-w-2xl mx-auto mb-10">
+        Get exclusive access to premium content, early releases, and insider analysis straight to your inbox.
+      </p>
+      <div class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+        <input 
+          type="email" 
+          placeholder="Your email address" 
+          class="flex-grow px-6 py-4 rounded-full text-[#0c1426] focus:outline-none focus:ring-2 focus:ring-[#0c1426]"
+        />
+        <button class="bg-[#0c1426] hover:bg-black text-white font-bold py-4 px-8 rounded-full transition duration-300 whitespace-nowrap">
+          Subscribe Now
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0c1426] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold text-[#ffb300]">CourtVision Daily</h3>
+          <p class="mt-2 text-gray-400">Daily Insights into Basketball Excellence</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-[#ffb300] transition-colors">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-[#ffb300] transition-colors">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-[#ffb300] transition-colors">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-[#1f3a6a] mt-8 pt-8 text-center text-gray-500">
+        <p>&copy; {new Date().getFullYear()} CourtVision Daily. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
